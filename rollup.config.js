@@ -7,7 +7,7 @@ import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 const name = 'Select';
-const path = 'dist/react-select';
+const path = 'dist/react-select-v2';
 const globals = {
   classnames: 'classNames',
   emotion: 'emotion',
@@ -22,15 +22,8 @@ const external = Object.keys(globals);
 const babelOptions = () => {
   let result = {
     babelrc: false,
-    presets: [
-      '@babel/preset-env',
-      '@babel/preset-react',
-      '@babel/preset-flow'
-    ],
-    plugins: [
-      'emotion',
-      '@babel/plugin-proposal-class-properties'
-    ]
+    presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-flow'],
+    plugins: ['emotion', '@babel/plugin-proposal-class-properties'],
   };
   return result;
 };
